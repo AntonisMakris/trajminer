@@ -13,6 +13,15 @@ trajminer's docs
    modules/classes
 
 
+Quick Examples
+==============
+
+.. toctree::
+   :maxdepth: 2
+
+   examples/test
+
+
 Indices and tables
 ==================
 

@@ -50,6 +50,8 @@ class TrajectorySegmenter(object):
         self.mode = mode
         self.n_jobs = n_jobs
         self.ignore_missing = ignore_missing
+        self.attr2idx = dict(zip(self.attributes,
+                                 np.r_[0:len(self.attributes)]))
 
         if not thresholds:
             self.thresholds = {}
@@ -77,7 +79,8 @@ class TrajectorySegmenter(object):
         def segment(X, s):
             def check_segment(p1, p2):
                 b = []
-                for i, attr in enumerate(self.attributes):
+                for attr in self.thresholds:
+                    i = self.attr2idx[attr]
                     f = self.thresholds[attr]
                     b.append(f(p1[i], p2[i]))
                 return np.any(b) if self.mode == 'any' else np.all(b)

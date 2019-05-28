@@ -26,7 +26,7 @@ author = 'Lucas M.P.'
 # The short X.Y version
 version = ''
 # The full version, including alpha/beta/rc tags
-release = '0.1.0.a1'
+release = '0.1.0.a2'
 
 
 # -- General configuration ---------------------------------------------------
@@ -44,7 +44,8 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.ifconfig',
     'sphinx.ext.githubpages',
-    'sphinx.ext.doctest'
+    'sphinx.ext.doctest',
+    'nbsphinx'
 ]
 
 numpydoc_class_members_toctree = False
@@ -75,7 +76,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ['**.ipynb_checkpoints']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None

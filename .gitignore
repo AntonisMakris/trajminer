@@ -2,6 +2,7 @@
 *.so
 *.pyd
 __pycache__
+**.ipynb_checkpoints/
 
 build/
 dist/
